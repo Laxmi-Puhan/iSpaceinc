@@ -13,6 +13,7 @@
     "@cypress/browserify-preprocessor": "latest"
   },
   "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
     "cypress": "^13.8.1",
     "cypress-xpath": "^2.0.1"
   }
