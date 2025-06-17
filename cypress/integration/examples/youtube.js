@@ -1,17 +1,16 @@
-describe('Youtube cases', ()=>{
+describe('Youtube test scenario', ()=>{
 
-it('Tesace 1', ()=>{
+it('Testcase 1', ()=>{
     cy.visit('https://www.youtube.com/')
     cy.get('.ytSearchboxComponentInput').type('cypress tutorial')
-    cy.get('#i0').each(($el)=>{
-        const itemText = 'cypress tutorial'
-        if (itemText.includes('cypress tutorial')) {
-        expect(itemText).to.include("cypress tutorial")
-        cy.wrap($el).click()                  
-                          
-  }
-  return false   
+    cy.get('#i0').each(($el) => {
+    const actualText = $el.text()
+    if (actualText.includes('cypress tutorial')) {
+    expect(actualText).to.include('cypress tutorial')
+    cy.wrap($el).click()
+    return false                                     
+  }  
 })
- cy.get(':nth-child(1) > .yt-lockup-view-model-wiz > .yt-lockup-view-model-wiz__metadata > .yt-lockup-metadata-view-model-wiz > .yt-lockup-metadata-view-model-wiz__text-container > .yt-lockup-metadata-view-model-wiz__heading-reset > .yt-lockup-metadata-view-model-wiz__title > .yt-core-attributed-string').click()
+cy.get('.yt-lockup-view-model-wiz__metadata').eq(1).click()
 })
 })
